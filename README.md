@@ -3,9 +3,18 @@
 
 
 ## DEFINICOES
-- **PROPERTY BIND:** lincar valor de um elemento do DOM com uma expressão angular: 
-    - ONY-WEY(do component para o template) [value]="valor"
-    - TWO-WEY(do componennte para o template e do template para o componente) - [(value)]="valor"
-- 
+
+### PROPERTY BIND:** 
+    Vincular valor de um elemento do DOM com uma expressão angular: 
+    
+    - **ONY-WEY:** alteração de propriedade no componente reflete no template (unidirecional) 
+        - [value]="valor"
+    
+    - TWO-WEY:** alteração de propriedades no componente reflete no template e alteração de propriedades no template reflete no  componente (bidirecional) 
+        - [(value)]="valor"
+
+
+
+
 
 
