@@ -1,5 +1,6 @@
 # ANGULAR 4
-     - Toda a aplicação angular 4 é orientada a componentes. Isso deixou a aplicação muito mais facil para testar.
+     - Toda a aplicação angular 4 é orientada a componentes. Isso deixou a aplicação muito 
+       mais facil para testar.
      - Ainda baseado em SPA (Single Page Aplication)
 
 ## Ambiente de desenvolvimento
@@ -53,11 +54,16 @@
 ### Controller
 
 ### Directives
+	responsável por modificar elementos do DOM e seu comportamento.
+	
+- **autoGrow:** aumenta ou diminiu o tamanho de uma div.
 
 ### Roteamento
-
+	Responsável pela navegaçãode páginas
+	
 ### Templates
-        Encapsula o código Html que será mostrado para o usuário. Pode ser: um formulário, um input, um botão, etc.
+        Encapsula o código Html que será mostrado para o usuário. Pode ser: um formulário, 
+	um input, um botão, etc.
         
 ### Metadata
         Permite ao angular ler e fazer o processamento das classes
