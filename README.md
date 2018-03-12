@@ -4,8 +4,11 @@
      - Ainda baseado em SPA (Single Page Aplication)
 
 ## Ambiente de desenvolvimento
-    - Nodejs
-    - 
+    - Nodejs (com npm)
+    - Angular CLI (npm install -g angular-cli)
+    - Typescript (npm install-g typescript)
+    
+    
     
     
 ## Definições
