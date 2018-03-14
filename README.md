@@ -75,6 +75,55 @@
 ### Injeção de dependencia
 
 
+### Módulos
+    
+   **Compartilhado:**  modulo que será compartilhado com os demais modulos. (exports)
+	
+	import { NgModule } from '@angular/core';
+	import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+	import { RouterModule } from '@angular/router';
 
+	import { CommonModule } from '@angular/common';
+	import { LoadingSpinnerComponent} from './ui/loading-spinner/loading-spinner.component';
+	import { ROUTES } from '../app.routes';
+	
+
+	@NgModule({
+	  declarations: [
+	      LoginLayoutComponent,
+	   ],
+	  imports: [
+	    CommonModule, FormsModule, ReactiveFormsModule, RouterModule
+	  ],
+	  exports: [
+		LoadingSpinnerComponent,
+		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
+		RouterModule
+	  ]
+	})
+	export class SharedModule { }
+    
+   
+   **Lazy-loading** (carregamento tardio): módulo que será carregado somente se utilizado.
+ 	
+	 ROUTER 
+	 		{ path: 'plans', loadChildren: './plans/plans.module#PlansModule'}
+	   
+	 MODULE  
+	 
+	               const ROUTES: Routes = [
+			  {path: '', component: PlansComponent}
+			];
+
+			@NgModule({
+			  declarations: [PlansComponent, PlansComponent],
+			  imports: [
+			     SharedModule, RouterModule.forChild(ROUTES)
+			  ],
+			})
+			export class PlansModule { }
+	
 
 
