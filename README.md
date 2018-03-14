@@ -76,8 +76,18 @@
 
 
 ### Módulos
+	São itens de configuração que servem para agregar diretivas, serviços, pipes ou components. 
+	São utilizados:
+	- para organização do código, 
+	- decidir o que será exportado externamente 
+	- defiinir como a injeção de dependencia vai ser configurada.
+	- dividir a aplicação em partes independentes e permitir que essas partesnão sejam 
+	  carregas de imediato, apenas quando requisitadas
+	
+   **Root Module:** Módulo principal da aplicação. Tem uma referência para os demais módulos. Unico que apresenta
+	bootstrap. 
     
-   **Compartilhado:**  modulo que será compartilhado com os demais modulos. (exports)
+   **Shared Module (Compartilhado):**  modulo que será compartilhado com os demais modulos. (exports)
 	
 	import { NgModule } from '@angular/core';
 	import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -105,8 +115,11 @@
 	})
 	export class SharedModule { }
     
+  **Feature Module:** Contém a implementação das funcionalidades da aplicação. Importam o modulo compartilhado.
+  **CoreModule:** Utilizado para organizar os providers.
    
-   **Lazy-loading** (carregamento tardio): módulo que será carregado somente se utilizado.
+   **Lazy-loading (carregamento tardio)** : módulo que será carregado somente se utilizado. 
+	
  	
 	 ROUTER 
 	 		{ path: 'plans', loadChildren: './plans/plans.module#PlansModule'}
@@ -125,5 +138,9 @@
 			})
 			export class PlansModule { }
 	
-
+  **Pre carregamento:**: Realiza o carregamento dos modulos lazy em  backgroung.
+   		
+		import { RouterModule, PreloadAllModules } from '@angular/router';
+		
+		RouterModule.forRoot(ROUTES,{preloadingStrategy: PreloadAllModules})
 
